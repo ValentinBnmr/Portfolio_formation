@@ -695,7 +695,7 @@ footer .mail:hover::before {
     }
 
     .burger {
-        position: fixed;
+        position: absolute;
         cursor: pointer;
         left: var(--margin-content);
         border-radius: 2em;
