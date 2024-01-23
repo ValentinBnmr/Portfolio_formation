@@ -279,6 +279,7 @@ nav {
 .container-info-etudes h4 {
     font-size: 20px;
     margin-top: 15px;
+    color: var(--color-primary);
 }
 
 

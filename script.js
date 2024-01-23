@@ -72,7 +72,8 @@ window.addEventListener("scroll", ()=>{
 
     let progressHeight = (window.pageYOffset / totalHeight) * 100;
     if(progressHeight > 0.5) {
-        navbar.style.backdropFilter='blur(5px)';
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.webkitBackdropFilter = 'blur(10px)';
         navbar.style.backgroundColor='rgba(255,255,255,.15)'
       
 
