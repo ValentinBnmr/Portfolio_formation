@@ -9,8 +9,9 @@ const header = document.body.querySelector('header');
 const navlinksContainer = document.body.querySelector('.navlinks-container');
 const openNav = document.body.querySelector('.open');
 const closeNav = document.body.querySelector('.close');
-const navlinks = document.body.querySelectorAll('.navlinks-container li a');;
+const navlinks = document.body.querySelectorAll('.navlinks-container li a');
 const btnDisco = document.body.querySelector('.btn-discover');
+const containerInfosEtudes = document.body.querySelectorAll('.container-info-etudes');
 
 let j = false;
 let i = false;
@@ -24,6 +25,9 @@ btnDarkmode.addEventListener("click", ()=>{
         root.style.setProperty('--color-secondary','#ffffffbd');
         root.style.setProperty('--background-navbar','#121d32')
         header.style.background='var(--background-dark-mode)';
+        for (let i = 0; i < containerInfosEtudes.length; i++) {
+        containerInfosEtudes[i].style.color='#294268';   
+        }
         btnDarkmode.src = "src/icon/sun.png";
         i = true;
     }else {
@@ -83,3 +87,8 @@ window.addEventListener("scroll", ()=>{
    
     
 })
+
+
+
+
+

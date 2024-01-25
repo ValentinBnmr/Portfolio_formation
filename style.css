@@ -33,7 +33,7 @@ body {
     background-blend-mode: multiply;
     background-size: 62px 62px, 62px 62px;
     background-color: #ffffff;
-
+    animation: removeLoader;
     
 }
 
@@ -44,6 +44,7 @@ body {
     background-color: #0e1629;
     transition: 0.6s;
 }
+
 
 a { 
     text-decoration: none;
@@ -61,6 +62,7 @@ h1,h2,h3,h4,li {
     padding-top: 62px;
 }
 
+
 header {
     position: relative;
     height: 95vh;
@@ -75,7 +77,7 @@ header .container-photo-vb {
     grid-column: 2/3;
     height: 100%;
     width: 50%;
-    background-image: url(src/img/photop.jpg);
+    background-image: url(src/img/photop.webp);
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;
@@ -114,7 +116,7 @@ nav {
 
 .nav-logo a {
     color: var(--color-primary);
-    font-family: 'Sen',sans-serif ;
+    font-family: var(--primary-font);
     font-size: 1em;
     transition: var(--smooth-transition);
 }
@@ -217,7 +219,7 @@ nav {
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto',sans-serif;
+    font-family: var(--primary-font);
     text-transform: uppercase;
     border: 2px solid #fbfbfb00;
     transition: 0.4s;
@@ -240,7 +242,7 @@ nav {
     font-style: normal;
     font-weight: bold;
     font-size: 180px;
-    font-family: 'Roboto',sans-serif;
+    font-family: var(--primary-font);
     letter-spacing: 18px;
     color: rgba(85, 101, 125, 0.055);
 }
@@ -268,10 +270,15 @@ nav {
 }
 
 .container-info-etudes {
+    background: #fff;
+    padding: 8px 32px;
     width: fit-content;
     margin: 10px 0;
     text-align: center;
-    
+    border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 20px 25px -5px, rgba(124, 124, 124, 0.01) 0px 8px 8px -5px;
+    color: var(--color-primary);
+
 }
 
 
@@ -279,7 +286,6 @@ nav {
 .container-info-etudes h4 {
     font-size: 20px;
     margin-top: 15px;
-    color: var(--color-primary);
 }
 
 
@@ -287,7 +293,6 @@ nav {
 .container-info-etudes p {
     font-size: 18px;
     margin-bottom: 16px;
-    color: var(--color-primary);
     
 }
 
@@ -297,14 +302,15 @@ nav {
     position: relative;
     height: fit-content;
     background: linear-gradient(125.99deg, #0093E9 0%, #80D0C7 100%);
+    padding-top: 56px;
 }
 
 #competences::before {
     position: absolute;
     content: 'compétences';
-    top: 1000px;
+    top: 500px;
     right: -300px;
-    font-size: 128px;
+    font-size: 100px;
     font-weight: bold;
     transform: rotate(90deg);
     color: rgba(255, 255, 255, 0.22);
@@ -315,46 +321,21 @@ nav {
 
 #competences h2 {
     display: none;
-    padding-top: 48px;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.466);
-    font-size: 48px;
 
 }
 #text-comp {
     position: relative;
     min-width: 300px;
     max-width: 800px;
-    text-align: justify;
-    padding: var(--margin-content) 0;
-    margin: 0 auto;
+    text-align: center;
     color: rgba(255, 255, 255, 0.897);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
+    margin: 0 auto;
 }
 
 
-#text-comp::before {
-    position: absolute;
-    content: '❝';
-    color: rgba(255, 255, 255, 0.212);
-    top: 40px;
-    left: -60px;
-    font-size: 180px;
-    
-}
 
-
-#text-comp::after {
-    position: absolute;
-    content: ' ❞';
-    color: rgba(255, 255, 255, 0.212);
-    bottom: 0px;
-    right: -60px;
-    font-size: 180px;
-    
-}
 
 #container-progressbar {
     margin: 0 var(--margin-content);
@@ -387,11 +368,11 @@ nav {
 
 .title-progressbar {
     color: #fff;
-    font-weight: bold;
+    font-weight: fold;
 }
 
 .level-progressbar {
-    font-family: 'Roboto',sans-serif;
+    font-family: var(--primary-font);
     align-self: center;
     color: rgba(255, 255, 255, 0.57);
     font-weight: bold;
@@ -468,6 +449,224 @@ nav {
     color: var(--color-secondary);
 }
 
+/* Partie : section my-projects (Mes projets) */
+#my-projects
+{
+	width: 100%;
+	background: var(--bg-color-even-section);
+    margin: 0;
+}
+
+#my-projects h2 {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 64px;
+    text-transform: uppercase;
+    margin-top: 128px;
+}
+
+.text-descrip-projects {
+    color: var(--color-secondary);
+    font-size: 16px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.container-grid-projects
+{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 360px);
+    flex-wrap: wrap;
+	gap: 24px;
+    justify-content: center;
+	text-align: center;
+	margin-top: 64px;
+    padding: 0 var(--margin-content);
+}
+
+.container-grid-projects .cards-projects
+{   
+    position: relative;
+    min-height: 503.6px;
+	height: fit-content;
+	border-radius: 16px;
+	background: #0293e8;
+	margin-bottom: 56px;
+    transition: 0.6s;
+}
+
+.cards-projects::before {
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background-color: transparent; /* Initialement transparent ou invisible */
+    opacity: 0; /* Rendre invisible */
+    transition: opacity 0.6s; /* Pour un effet de fondu */
+}
+
+.cards-projects:hover::before {
+    content: 'Voir le projet'; /* Texte à afficher */
+    background-color: #b6e2fc73; /* Couleur de fond au survol */
+    opacity: 1; /* Rendre visible */
+    /* Autres propriétés de style comme avant */
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    font-family: var(--primary-font);
+    font-size: 2em;
+    font-weight: 700;
+    color: #ffffffb6;
+}
+
+.cards-projects:hover {
+    
+    transform: scale(1.05);
+}
+
+
+
+.cards-projects .banner-card
+{
+	width: 100%;
+    min-height: 250px;
+	height: 40%;
+	border-radius: 16px 16px 0 0;
+
+}
+
+
+
+
+a:nth-child(1) .banner-card {
+    background: url('src/img/genecitation.JPG') no-repeat center / cover;
+}
+
+a:nth-child(2) .banner-card {
+    background: url('src/img/proj_slider_js.webp') no-repeat center / cover;
+}
+
+a:nth-child(3) .banner-card {
+    background: url('src/img/appmeteopres.JPG') no-repeat center / cover;
+}
+
+a:nth-child(4) .banner-card {
+    background: url('src/img/document-valentinbnmr-github-io.webp') no-repeat center / cover;
+}
+
+a:nth-child(5) .banner-card {
+    background: url('src/img/mockup_ga.webp') no-repeat 0px 70% / cover;
+}
+
+a:nth-child(6) .banner-card {
+    background: url('src/img/mockup_sezen_perf.webp') no-repeat 0px 70% / cover;
+}
+
+.container-text-card-project
+{
+	padding: 24px;
+    color: var(--color-title-inter);
+}
+
+.cards-projects .title-cards-project
+{
+	font-size: 24px;
+    color: var(--color-title-inter);
+}
+
+.cards-projects .subtitles-card-project
+{
+	text-align: left;
+	font-weight: normal;
+	padding: 16px 0;
+}
+
+.cards-projects .description-card
+{
+	text-align: justify;
+    color: var(--color-title-inter);
+}
+
+.cards-projects button
+{
+	position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+	padding: 24px;
+	border: none;
+	border-radius: 0px 0 16px 16px;
+	background: var(--color-title-inter);
+	cursor: pointer;
+    transition: 0.6s;
+    transform: translate(-49.9%);
+	color: #0293e8;
+    text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+    padding-top: 16px;
+}
+
+
+
+.cards-projects button:hover
+{
+	opacity: 0.8;
+}
+
+.container-tag-proj {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+}
+
+.tag-proj {
+    font-family: var(--secondary-font);
+    font-size: 0.8em;
+    background-color: #7eb2ff7e;
+    padding: 4px 8px;
+    border-radius: 32px;
+    transition: 0.6s;
+}
+
+.tag-proj:hover {
+    background: var(--color-title-inter);
+    color: #0093E9;
+}
+
+
+
+.btn-more-projects
+{
+	display: block;
+	margin: 0 auto;
+	font-size: 20px;
+	padding: 24px 108px;
+	border: 2px solid #2e60e0;
+	border-radius: 8px;
+	background-color: rgb(0,0,0,0);
+	transition: all 0.5s;
+
+}
+
+.btn-more-projects a {
+	text-decoration: none;
+	color: var(--second-font-color);
+
+}
+
+.btn-more-projects:hover {
+	background-color: #2e60e0;
+	transform: translateY(-4px);
+
+}
+
 /* Section : Centres d'intérêts */
 
 #centres-interet {
@@ -510,37 +709,37 @@ nav {
 }
 
 .inter-1 {
-    background-image: url(src/img/alpi.jpg);
+    background-image: url(src/img/alpi.webp);
     background-position: center;
     background-size: cover;
 }
 
 .inter-2 {
-    background-image: url(src/img/climb.jpg);
+    background-image: url(src/img/climb.webp);
     background-position: center;
     background-size: cover;
 }
 
 .inter-3 {
-    background-image: url(src/img/hiking.jpg);
+    background-image: url(src/img/hiking.webp);
     background-position: center;
     background-size: cover;
 }
 
 .inter-4 {
-    background-image: url(src/img/read.jpg);
+    background-image: url(src/img/read.webp);
     background-position: center;
     background-size: cover;
 }
 
 .inter-5 {
-    background-image: url(src/img/photog.jpg);
+    background-image: url(src/img/photog.webp);
     background-position: center;
     background-size: cover;
 }
 
 .inter-6{
-    background-image: url(src/img/inform.jpg);
+    background-image: url(src/img/inform.webp);
     background-position: center;
     background-size: cover;
 }
@@ -563,17 +762,45 @@ nav {
     z-index: 3;
 }
 
+
+
 /* Section : Contact (footer) */
 
 footer {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    height: fit-content;
+    justify-content: start;
+    height: 400px;
     background:
      linear-gradient(125.99deg, #0093E9 0%, #80D0C7 100%);
     margin-top: 350px;
     color:  #fff;
+}
+
+.container-infos-contact {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+
+.container-photo-footer {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: url('src/img/photo-footer.webp') no-repeat center / cover;
+}
+
+.container-photo-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background:
+     linear-gradient(125.99deg, #80D0C7 0%, #0093E9 60%);
+    opacity: 0.4;
 }
 
 
@@ -655,8 +882,13 @@ footer .mail:hover::before {
  }
 
  .credit {
-     color: #fff;
-     margin-top: 80px;
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    color: #fff;
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    z-index: 3;
  }
 
 
@@ -753,6 +985,7 @@ footer .mail:hover::before {
     }
 
     .text-pres {
+      
         padding: 0;
         margin: 0;
         
@@ -768,6 +1001,10 @@ footer .mail:hover::before {
         text-align: center;
     }
 
+    .text-pres button {
+        margin-top: 24px;
+    }
+
     .text-style {
         display: none;
     }
@@ -776,35 +1013,23 @@ footer .mail:hover::before {
 
     .photo-vb {
             display: inline-block;
+            height: 200px;
+            width: 200px;
             min-height: 200px;
             min-width: 200px;
-            max-height: 300px;
-            max-width: 300px;
-            border-radius: 50%;
+            max-height: 250px;
+            max-width: 250px;
+            border-radius: 100%;
             padding-top: 10px;
             
         }
-    #competences h2 {
-        display: block;
-        margin: 0 auto;
-    }
-
-    #competences::before {
-        content: '';
-    }
-
+    
     #text-comp {
         font-size: 16px;
-        padding: var(--margin-content) 20px;
-    }
-    
-    #text-comp::after, #text-comp::before {
-        content: '';
+       
     }
     
     .xp-desc {
-        margin: 0 auto;
-        text-align: center;
         margin-top: 1.5em;
     }
     .container-cards-interets {
@@ -818,19 +1043,19 @@ footer .mail:hover::before {
     .containter-grid-xp {
         display: block;
     }
-    .cards-xp, .cards-xp h4,.cards-xp .desc {
-        text-align: center;
-    }
-
-    .cards-xp .desc {
-        margin: 0 auto;
-    }
+   
+    
+    
 
     .cards-xp h4 {
         font-size: 18px;
     }
 
-    #centres-interet h2, #experiences h2 {
+    #my-projects h2 {
+        font-size: 2.5em;
+    }
+
+    #centres-interet h2 {
         font-size: 2.5em;
         text-align: center;
         
@@ -853,7 +1078,23 @@ footer .mail:hover::before {
         grid-template-rows: repeat(6,minmax(150px,204px));
     }
 
+    footer {
+        justify-content: center;
+        
+    }
+
+    .container-infos-contact, a, h2 {
+        margin: 0 auto;
+    }
+
+    .container-photo-footer {
+        display: none;
+    }
+
+   
 }
+
+
 
 @media screen and (max-width: 610px) {
     
@@ -865,19 +1106,58 @@ footer .mail:hover::before {
         
     }
 
-    #centres-interet h2, #experiences h2 {
+    #competences h2 {
+        display: block;
+        margin-left: var(--margin-content);
+        color: rgba(255, 255, 255, 0.534);
+        text-transform: uppercase;
+
+    }
+
+    #competences::before {
+        content: '';
+    }
+
+    #etudes h2, #competences h2, #experiences h2, #my-projects h2 {
         font-size: 2.2em;
+    }
+
+    #centres-interet h2, #experiences h2 {
         text-align: center;
         
     }
+
 
     .xp-desc {
         width: 90%;
     }
 
+    .cards-projects {
+        margin: 0 16px;
+    }
+
+    .text-descrip-projects {
+        margin: 0 16px;
+    }
+
+    .container-text-card-project {
+        padding: 8px;
+    }
+
+    footer h2 {
+        margin-top: 0px;
+    }
+
     footer .mail, .tel {
         font-size: 1.2em;
     }
+
+    .credit {
+        font-size: 14px;
+        font-weight: normal;
+
+    }
+
 
 }
 
