@@ -489,6 +489,7 @@ nav {
 {   
     position: relative;
     min-height: 503.6px;
+    min-width: 328px;
 	height: fit-content;
 	border-radius: 16px;
 	background: #0293e8;
@@ -518,6 +519,7 @@ nav {
     /* Autres propriétés de style comme avant */
     border-radius: 16px;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     font-family: var(--primary-font);
     font-size: 2em;
     font-weight: 700;
