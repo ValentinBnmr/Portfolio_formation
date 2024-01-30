@@ -40,8 +40,11 @@ body {
 .body-darkmode {
     background: radial-gradient(at bottom right, rgba(115, 152, 207, 0.75) 0, rgba(115, 152, 207, 0.75) 8px, rgba(115,152,207,0.2) 8px, rgba(115,152,207,0.2) 16px, rgba(115,152,207,0.75) 16px, rgba(115,152,207,0.75) 24px, rgba(115,152,207,0.25) 24px, rgba(115,152,207,0.25) 32px, rgba(115,152,207,0.3) 32px, rgba(115,152,207,0.3) 40px, rgba(115,152,207,0.75) 40px, rgba(115,152,207,0.75) 48px, rgba(115,152,207,0.2) 48px, rgba(115,152,207,0.2) 56px, transparent 56px, transparent 64px), radial-gradient(at top left, transparent 0, transparent 8px, rgba(115,152,207,0.2) 8px, rgba(115,152,207,0.2) 16px, rgba(115,152,207,0.75) 16px, rgba(115,152,207,0.75) 24px, rgba(115,152,207,0.3) 24px, rgba(115,152,207,0.3) 32px, rgba(115,152,207,0.25) 32px, rgba(115,152,207,0.25) 40px, rgba(115,152,207,0.75) 40px, rgba(115,152,207,0.75) 48px, rgba(115,152,207,0.2) 48px, rgba(115,152,207,0.2) 56px, rgba(115, 152, 207, 0.75) 56px, rgba(115, 152, 207, 0.75) 64px, transparent 64px, transparent 160px);
     background-blend-mode: multiply;
+    -webkit-background: radial-gradient(at bottom right, rgba(115, 152, 207, 0.75) 0, rgba(115, 152, 207, 0.75) 8px, rgba(115,152,207,0.2) 8px, rgba(115,152,207,0.2) 16px, rgba(115,152,207,0.75) 16px, rgba(115,152,207,0.75) 24px, rgba(115,152,207,0.25) 24px, rgba(115,152,207,0.25) 32px, rgba(115,152,207,0.3) 32px, rgba(115,152,207,0.3) 40px, rgba(115,152,207,0.75) 40px, rgba(115,152,207,0.75) 48px, rgba(115,152,207,0.2) 48px, rgba(115,152,207,0.2) 56px, transparent 56px, transparent 64px), radial-gradient(at top left, transparent 0, transparent 8px, rgba(115,152,207,0.2) 8px, rgba(115,152,207,0.2) 16px, rgba(115,152,207,0.75) 16px, rgba(115,152,207,0.75) 24px, rgba(115,152,207,0.3) 24px, rgba(115,152,207,0.3) 32px, rgba(115,152,207,0.25) 32px, rgba(115,152,207,0.25) 40px, rgba(115,152,207,0.75) 40px, rgba(115,152,207,0.75) 48px, rgba(115,152,207,0.2) 48px, rgba(115,152,207,0.2) 56px, rgba(115, 152, 207, 0.75) 56px, rgba(115, 152, 207, 0.75) 64px, transparent 64px, transparent 160px);
+    -webkit-background-blend-mode: multiply;
     background-size: 64px 64px, 64px 64px;
     background-color: #0e1629;
+    -webkit-background-color: #0e1629;
     transition: 0.6s;
 }
 
@@ -959,11 +962,12 @@ footer .mail:hover::before {
         position: fixed;
         left: 0;
         top: 0;
-        background: var(--background-navbar);
+        background: #ffffff8c;
+        backdrop-filter: blur(32px);
         height: 100vh;
         width: 100%;
         flex-direction: column;
-        gap: 6em;
+        gap: 3em;
         transition: all 1s ease-out;
         z-index: 1;
         display: none;
