@@ -10,7 +10,7 @@
     --primary-font: 'Sen', sans-serif;
     --secondary-font: 'Arimo', sans-serif;;
     --color-primary: #294268;
-    --color-secondary: #14386ee0;
+    --color-secondary: #0f2950;
     --color-title-inter: #F0F7FD;
     --background-dark-mode: #0e1629;
     --background-navbar: #fff;
@@ -62,15 +62,18 @@ h1,h2,h3,h4,li {
 }
 
 #etudes h2, #experiences h2,#centres-interet h2 {
-    padding-top: 62px;
+    padding-top: 8px;
 }
 
+.emoji-pres {
+    font-size: 56px;
+    text-align: center;
+}
 
 header {
     position: relative;
-    height: 95vh;
+    height: 90vh;
     display: flex;
-    justify-content: flex-end;
     background: #fefefe;
     transition: 0.6s;
 }
@@ -181,8 +184,7 @@ nav {
 
 .text-pres {
   
-    padding: 40px;
-    margin-left: var(--margin-content);
+    padding: 40px 128px;
     opacity: 0;
 	animation: appearTitleContainerProfil cubic-bezier(0.29, -0.14, 0.31, 1.04) 1s forwards;
 }
@@ -199,17 +201,17 @@ nav {
     margin-top: 22px;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 32px;
     color: var(--color-primary);
 }
 
 .text-pres p {
-    max-width: 520px;
+    max-width: 600px;
     min-width: 300px;
     margin-top: 24px;
     text-align: justify;
     line-height: 25px;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .text-pres button {
@@ -408,7 +410,7 @@ nav {
     min-width: 250px;
     width: 65%;
     font-size: 1em;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     text-align: justify;
     margin-top: 1em;
 }
@@ -458,6 +460,7 @@ nav {
 	width: 100%;
 	background: var(--bg-color-even-section);
     margin: 0;
+    margin-top: var(--margin-content);
 }
 
 #my-projects h2 {
@@ -465,7 +468,7 @@ nav {
     text-align: center;
     font-size: 64px;
     text-transform: uppercase;
-    margin-top: 128px;
+    
 }
 
 .text-descrip-projects {
@@ -776,7 +779,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: start;
-    height: 400px;
+    height: 460px;
     background:
      linear-gradient(125.99deg, #0093E9 0%, #80D0C7 100%);
     margin-top: 350px;
@@ -818,7 +821,7 @@ footer h2 {
 
 }
 
-footer .mail, .tel {
+footer .mail, .tel,.cv {
     width: fit-content;
     position: relative;
     margin-top: 24px;
@@ -832,7 +835,7 @@ footer .mail, .tel {
     font-family: var(--primary-font);
 }
 
-footer .mail::before, .tel::before {
+footer .mail::before, .tel::before,.cv::before {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -846,10 +849,23 @@ footer .mail::before, .tel::before {
 
 }
 
+footer .cv:hover {
+    color: #0093E9;
+
+}
+
+footer .cv:hover::before {
+    border-radius: 8px 8px 2px 2px;
+    height: 100%;
+}
+
+
 footer .tel:hover {
     color: #0093E9;
 
 }
+
+
 
 footer .tel:hover::before {
     border-radius: 8px 8px 2px 2px;
@@ -902,9 +918,7 @@ footer .mail:hover::before {
 
 @media screen and (max-width: 1500px) {
    
-    .text-pres {
-        padding-left: 0;
-    }
+
 
     #text-style {
         display: none;
@@ -1074,7 +1088,7 @@ footer .mail:hover::before {
         text-align: center;
         height: fit-content;
     }
-
+   
     #etudes h2 {
         font-size: 64px;
     }
@@ -1211,7 +1225,7 @@ footer .mail:hover::before {
 }
 
 .ariane[data-scroll="in"] {
-    animation: anim-ariane ease-out 2s forwards;
+    animation: anim-ariane ease-out 1.5s forwards;
 
 }
 
